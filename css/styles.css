@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-lable {
+  background-color: #d2d2d2;
+  width: 200px;
+  height: 100px;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.check-lable::before {
+  position: absolute;
+  content: "";
+  background-color: #fff;
+  width: 90px;
+  height: 90px;
+  border-radius: 50px;
+  margin: 5px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle:checked + .check-lable {
+  background-color: #20096d;
+}
+
+.toggle:checked + .check-lable::before {
+  transform: translateX(100px);
+}
